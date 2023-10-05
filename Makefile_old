@@ -1,0 +1,43 @@
+NAME = push_swap
+
+SRC_DIR = src/
+
+LIBFT_DIR = libft/
+LIBFT_FILE = libft.all
+LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_FILE))
+
+SOURCES = main.c get_range.c stack_utils.c arg_utils.c \
+
+
+INCLUDE = -I include/ -I libft/ #push_swap.h
+
+CC = gcc
+RM = rm -f
+AR = ar rcs
+CFLAGS = -Wall -Wextra -Werror
+
+# Agregamos la regla para crear objetos
+%.o: %.c ${INCLUDE}
+	@echo "Compiling $<"
+	@${CC} ${CFLAGS} -c $< -o $@
+
+# Usamos SOURCES para obtener la lista de objetos
+OBJS = ${SOURCES:.c=.o}
+
+all: ${NAME}
+
+${NAME}: ${OBJS}
+	@${AR} ${NAME} ${OBJS}
+	@echo "\nCreated $(NAME)\n"
+
+clean:
+	@${RM} ${OBJS}
+	@echo "\nAll objects cleaned successfully\n"
+
+fclean: clean
+	@${RM} ${NAME}
+	@echo "\nAll objects and executable cleaned successfully\n"
+
+re: fclean all
+
+.PHONY: all clean fclean re

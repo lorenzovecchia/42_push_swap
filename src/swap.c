@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   range.c                                            :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvecchia <lvecchia@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 12:48:21 by lvecchia          #+#    #+#             */
-/*   Updated: 2023/10/05 12:49:05 by lvecchia         ###   ########.fr       */
+/*   Created: 2023/10/05 16:12:38 by lvecchia          #+#    #+#             */
+/*   Updated: 2023/10/05 16:12:41 by lvecchia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	get_range(t_stack *a, t_stack *b, int argc)
+/*sa : swap a - intercambia los dos primeros elementos encima del stack a.*/
+void	ft_sa(t_stack *a)
 {
-	if (argc == 2)
+	if (ft_lst_size(a) > 1)
 	{
-		ft_sa(a);
-		ft_printstack(a, "AC2\n");
+		ft_swap(a);
+		printf("sa\n");
 	}
-	else if (argc == 3)
+}
+
+/*sb : swap b - intercambia los dos primeros elementos encima del stack b.*/
+void	ft_sb(t_stack *a, t_stack *b)
+{
+	(void)a;
+	if (ft_lst_size(b) > 1)
 	{
-		ft_order_3(&a);
-		ft_printstack(a, "AC3\n");
-	}
-	else if (argc == 4)
-	{
-		ft_order_4(&a, &b);
-		ft_printstack(a, "AC4\n");
-		ft_printstack(b, "BC4\n");
-	}
-	else if (argc == 5)
-	{
-		ft_order_5(&a, &b);
-		ft_printstack(a, "AC5\n");
+		ft_swap(b);
+		printf("sb\n");
 	}
 }

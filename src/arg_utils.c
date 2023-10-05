@@ -34,16 +34,14 @@ int	arg_split(int argc, char **argv)
 
 //CHECKS
 
-int		contains_digits(char *str);
-{
-	int i;
-
-	i = 0;
-	while(str[i] != '\0')
-		ft_isdigit(str[i]); //!!!!!
-		str++;
-	else 
-		return(0);
+int ft_contains_digit(char *str) {
+    while (*str) {
+        if (*str >= '0' && *str <= '9') {
+            return 1; 
+        }
+        str++;
+    }
+    return 0; 
 }
 
 
@@ -54,7 +52,7 @@ int	check_digits(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (contains_digit(argv[i]) == 0)
+		if (contains_digits(argv[i]) == 0)
 			return (1);
 		i++;
 	}
@@ -115,6 +113,7 @@ int	validate_args(int argc, char **argv)
 	}
 	return (0);
 }
+
 
 
 

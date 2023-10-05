@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "sstream": "c"
+        "sstream": "c",
+        "limits.h": "c",
+        "push_swap.h": "c"
     }
 }
