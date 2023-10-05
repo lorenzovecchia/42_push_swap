@@ -41,7 +41,7 @@ void	ft_order_4(t_stack **a, t_stack **b)
 {
 	int	min;
 
-	if (ft_is_ordered(*a))
+	if (is_ordered(*a))
 		return ;
 	min = ft_find_min(*a);
 	if ((*a)->num == min)//caso 1er valor sea el min

@@ -34,7 +34,7 @@ int	arg_split(int argc, char **argv)
 
 //CHECKS
 
-int ft_contains_digit(char *str) {
+int contains_digits(char *str) {
     while (*str) {
         if (*str >= '0' && *str <= '9') {
             return 1; 

@@ -5,7 +5,7 @@ LIBFT_FILE = libft.a
 LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_FILE))
 
 SRCS_DIR = src/
-SRC_FILES =	 main.c get_range.c stack_utils.c arg_utils.c
+SRC_FILES =	 main.c get_range.c stack_utils.c arg_utils.c order.c swap.c
 
 OBJS_DIR =	objs/
 OBJ_FILES = $(SRC_FILES:.c=.o)
